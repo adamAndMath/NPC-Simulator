@@ -1,10 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [ExecuteInEditMode]
 public class Connection : MonoBehaviour
 {
+    public static readonly List<Connection> Connections = new List<Connection>();
+
     public Room roomA;
     public Room roomB;
+
+    void OnEnable()
+    {
+        if (Application.isPlaying)
+            Connections.Add(this);
+    }
+
+    void OnDisable()
+    {
+        Connections.Remove(this);
+    }
 
     void Update()
     {

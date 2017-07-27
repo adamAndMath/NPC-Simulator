@@ -2,10 +2,10 @@
 
 public class Room : MonoBehaviour
 {
-    public Vector2 size;
+    public Position size;
 
-    public Vector2 Min { get { return transform.position; } }
-    public Vector2 Max { get { return Min + size; } }
+    public Position Min { get { return transform.position; } }
+    public Position Max { get { return Min + size; } }
 
     void OnDrawGizmos ()
     {
