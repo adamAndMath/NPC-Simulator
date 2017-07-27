@@ -4,6 +4,9 @@ public class Room : MonoBehaviour
 {
     public Vector2 size;
 
+    public Vector2 Min { get { return transform.position; } }
+    public Vector2 Max { get { return Min + size; } }
+
     void OnDrawGizmos ()
     {
         Gizmos.color = Color.blue;
